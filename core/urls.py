@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
-admin.site.site_header = 'KYAU-OES ADMIN'
-admin.site.site_title = 'KYAU ONLINE EXAMINATION SYSTEM'
+admin.site.site_header = 'ADMIN PANEL'
+admin.site.site_title = 'ONLINE EXAMINATION SYSTEM'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

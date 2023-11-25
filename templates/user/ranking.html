@@ -23,6 +23,7 @@
                     </thead>
                     <tbody>
                     {% for ranking_list in sorted_ranking_list %}
+                    {% if ranking_list.right_answer != 0 %}
                     <tr>
                         <td>
                         <i class="fa-lg text-danger me-3"></i>
@@ -42,6 +43,7 @@
                         {% endif %}
                         
                     </tr>
+                    {% endif %}
                     {% endfor %}
                     </tbody>
                   </table>

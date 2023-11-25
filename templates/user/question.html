@@ -1,0 +1,50 @@
+{% load static %}
+{% include "user/base.html" %}
+
+{% block content %}
+    <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Quiz / </span>{{req_topic}}</h4>
+    <!-- Bootstrap Table with Caption -->
+
+    <div class="row gy-4">
+    <div class="col-xl-12">
+        <form action="" method ="POST">
+            {% csrf_token %}
+            {% for qus in req_res %}
+        <div class="card">
+            <h5 class="card-header">{{forloop.counter}}. {{qus.question}}</h5>
+            <div class="card-body">
+            {% for ans in qus.answers %}
+            <div class="row">
+                <div class="col-md mb-md-0 mb-2">
+                <div class="form-check custom-option custom-option-basic">
+                    <label class="form-check-label custom-option-content" for="{{ans}}">
+                    <input name="teamerror-{{qus.category_id}}" class="form-check-input" type="radio" value="{{ans.answer}}teamerror-{{ans.is_correct}}" id="{{ans}}" />
+                    <span class="custom-option-header">
+                        <span class="h6 mb-0">{{ans.answer}}</span>
+                    </span>
+                    </label>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+        </div>
+    </div>
+
+
+    
+    <!-- Bootstrap Table with Caption -->
+    </div>
+    <!-- / Content -->
+    
+
+
+
+{% endblock %}
+{% include "user/footer.html" %}

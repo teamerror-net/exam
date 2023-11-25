@@ -1,0 +1,161 @@
+{% load static %}
+{% include "user/base.html" %}
+
+{% block content %}
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Profile /</span> Account</h4>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'settings' %}"
+                        ><i class="bx bx-link-alt me-1"></i>Settings</a
+                      >
+                    </li>
+                  </ul>
+                  <div class="card mb-4">
+                    <h5 class="card-header">Profile Details</h5>
+                    <!-- Account -->
+                    <form id="formAccountSettings" method="POST" action="{% url 'profile' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                    <div class="card-body">
+                      <div class="d-flex align-items-start align-items-sm-center gap-4">
+                        <img
+                        
+                          src="../media/{{user.profile_pic}}"
+                          alt="user-avatar"
+                          class="d-block rounded"
+                          height="100"
+                          width="100"
+                          id="uploadedAvatar" />
+                        <div class="button-wrapper">
+                          <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                            <span class="d-none d-sm-block">Upload new photo</span>
+                            <i class="bx bx-upload d-block d-sm-none"></i>
+                            <input
+                              type="file"
+                              id="upload"
+                              name = "profile_pic"
+                              class="account-file-input"
+                              hidden
+                              accept="image/png, image/jpeg" />
+                          </label>
+
+                          <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-0" />
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="mb-3 col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="firstName"
+                              name="first_name"
+                              value="{{user.first_name}}"
+                              autofocus 
+                              required/>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input class="form-control" type="text" name="last_name" id="lastName" value="{{user.last_name}}" required/>
+                          </div>
+                          
+                          {% if user.email == None %}
+                          <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="email"
+                              name="email"
+                              required/>
+                          </div>
+                          {% else %}
+                          <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="email"
+                              name="email"
+                              value="{{user.email}}" 
+                              required/>
+                          </div>
+                          {% endif %}
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label" for="phoneNumber">Phone Number</label>
+                            <div class="input-group input-group-merge">
+                              <span class="input-group-text">BD</span>
+                              <input
+                                type="text"
+                                id="phoneNumber"
+                                name="phone"
+                                class="form-control"
+                                value="{{user.phone}}" 
+                                required/>
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="organization" class="form-label">Username</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="organization"
+                              name="username"
+                              value="{{user.username}}"
+                              disabled />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="language" class="form-label">Department</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="organization"
+                              name="dept"
+                              value="{{user.dept}}"
+                              disabled />
+                            <div id="defaultFormControlHelp" class="form-text">
+                              Conct with administrator to update this field.
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="s_id" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="s_id" name="studentid" value="{{user.studentId}}" disabled/>
+                            <div id="defaultFormControlHelp" class="form-text">
+                              Conct with administrator to update this field.
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                            </div>
+                            {% endfor %}
+                          {% endif %}
+                        </div>
+                        <div class="mt-2">
+                          <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                          <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- /Account -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+            {% endblock %}
+
+            {% include "user/footer.html" %}

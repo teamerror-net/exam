@@ -1,0 +1,391 @@
+{% load static %}
+{% include "user/base.html" %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-lg-8 mb-4 order-0">
+                  <div class="card">
+                    <div class="d-flex align-items-end row">
+                      <div class="col-sm-7">
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">Congratulations {{user.studentId}}! 🎉</h5>
+                          <p class="mb-4">
+                            You achieved <span class="fw-medium">{{percentage}}%</span> correct answer score. Keep going..
+                          </p>
+                          <a href="{% url 'quiz' %}" class="btn btn-sm btn-outline-primary">Participate another Exam</a>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 text-center text-sm-left">
+                        <div class="card-body pb-0 px-0 px-md-4">
+                          <img
+                            src="{% static 'assets/img/illustrations/man-with-laptop-light.png' %}"
+                            height="140"
+                            alt="View Badge User"
+                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                            data-app-light-img="illustrations/man-with-laptop-light.png" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 order-1">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{% static 'assets/img/icons/unicons/chart-success.png' %}"
+                                alt="chart success"
+                                class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+
+                            </div>
+                          </div>
+                          <span class="fw-medium d-block mb-1">Available Exam</span>
+                          <h3 class="card-title mb-2">{{available_exam}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{% static 'assets/img/icons/unicons/wallet-info.png' %}"
+                                alt="Credit Card"
+                                class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                            
+                            </div>
+                          </div>
+                          <span>Participate Exam</span>
+                          <h3 class="card-title text-nowrap mb-1">{{total_participate}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Total Revenue -->
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-7">
+                        <h5 class="card-header m-0 me-2 pb-3">Education Growth</h5>
+
+                        <div class="col-md-12" style="height:auto"><canvas class="mx-3" id="totalRevenueChart"></canvas></div>
+
+                      <!--Chart.js -->  
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        
+                        <script>
+                          const ctx = document.getElementById('totalRevenueChart');
+                        
+                          new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                              labels: {{labels|safe}},
+                              datasets: [{
+                                label: 'Right Answer',
+                                data: {{data|safe}},
+                                backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 205, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(201, 203, 207, 0.2)'
+                              ],
+                              borderColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(255, 159, 64)',
+                                'rgb(255, 205, 86)',
+                                'rgb(75, 192, 192)',
+                                'rgb(54, 162, 235)',
+                                'rgb(153, 102, 255)',
+                                'rgb(201, 203, 207)'
+                              ],
+
+                                borderWidth: 1,
+                                borderRadius: 15
+                              }]
+                            },
+                            options: {
+                              responsive: true,
+                              scales: {
+                                y: {
+                                  beginAtZero: true
+                                }
+                              }
+                            }
+                          });
+                        </script>
+                        <!--End Chart.js -->
+                      </div>
+                      <div class="col-md-5">
+                        <div class="text-center fw-medium pt-2 mb-2">{{percentage}}% Right Answer</div>
+
+                        <div class="col-md-12 px-1 m-lg-4" style="height:24vh"><canvas id="02"></center></div>
+
+                      <!--Chart.js -->  
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        
+                        <script>
+                          const ctx2 = document.getElementById('02');
+                        
+                          new Chart(ctx2, {
+                            type: 'doughnut',
+                            data: {
+                              labels: ['Right', 'Wrong'],
+                              datasets: [{
+                                label: 'MCQ',
+                                data: [{{right_answer}}, {{wrong_answer}}],
+                                backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                              ],
+                              borderColor: [
+                                'rgb(75, 192, 192)',
+                                'rgb(255, 99, 132)',
+                              ],
+
+                                borderWidth: 1,
+                                borderRadius: 0
+                              }]
+                            },
+                            options: {
+                              responsive: true,
+                              scales: {
+                                y: {
+                                  beginAtZero: true
+                                }
+                              }
+                            }
+                          });
+                        </script>
+                        <!--End Chart.js -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{% static 'assets/img/icons/unicons/wallet-info.png' %}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              
+                            </div>
+                          </div>
+                          <span class="d-block mb-1">Subject</span>
+                          <h3 class="card-title text-nowrap mb-2">{{all_topic}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{% static 'assets/img/icons/unicons/cc-primary.png' %}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              
+                            </div>
+                          </div>
+                          <span class="fw-medium d-block mb-1">Growth</span>
+                          <h3 class="card-title mb-2">{{percentage}}%</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- </div>
+    <div class="row"> -->
+                    <div class="col-12 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                            <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                              <div class="card-title">
+                                <h5 class="text-nowrap mb-3">Quick Notice</h5>
+                                {% for notice in notices reversed%}
+                                {% if forloop.counter == 1 %}
+                                <span class="badge bg-label-warning rounded-pill mb-3">{{notice.date}}</span>
+                                <div>🎉 {{notice.notice}}</div>
+                                {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Order Statistics -->
+                <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Ranking History</h5>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orederStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                        </div>
+                        <div id="orderStatisticsChart"></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        {% for ranking_list in sorted_ranking_list %}
+                        {% if forloop.counter <= 5 %}
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="bx bx-mobile-alt"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">{{ranking_list.first_name}} {{ranking_list.last_name}}</h6>
+                              <small class="text-muted">Dept. {{ranking_list.dept}}</small>
+                            </div>
+                            {% if forloop.counter == 1 %}
+                            <div class="user-progress">
+                              <small class="fw-medium">{{forloop.counter}}st</small>
+                            </div>
+                            {% elif forloop.counter == 2 %}
+                            <div class="user-progress">
+                              <small class="fw-medium">{{forloop.counter}}nd</small>
+                            </div>
+                        {% elif forloop.counter == 3 %}
+                        <div class="user-progress">
+                          <small class="fw-medium">{{forloop.counter}}rd</small>
+                        </div>
+                        {% else %}
+                        <div class="user-progress">
+                          <small class="fw-medium">{{forloop.counter}}th</small>
+                        </div>
+                        {% endif %}
+                          </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Order Statistics -->
+
+                <!-- Transactions -->
+                <div class="col-md-6 col-lg-6 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Recent Quiz History</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+
+                        {% for history in all_history reversed%}
+                        {% if forloop.counter <= 5 %}
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{% static 'assets/img/icons/unicons/wallet-info.png' %}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">MCQ</small>
+                              <h6 class="mb-0">{{history.topic}}</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">{{history.total_right_answers}}/</h6>
+                              <span class="text-muted">{{history.total_wrong_answers}}</span>
+                            </div>
+                          </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Transactions -->
+              </div>
+            </div>
+            <!-- / Content -->
+
+{% endblock %}
+
+{% include "user/footer.html" %}

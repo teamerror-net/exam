@@ -1,0 +1,721 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="{% static 'assets' %}"
+  data-template="vertical-menu-template-free">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>KYAU - Online Examination System</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.ico' %}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}" />
+
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/theme-bordered.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/front-page.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/nouislider/nouislider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/swiper/swiper.css' %}" />
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/front-page-landing.css' %}" />
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+      <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="{% static 'assets/vendor/js/template-customizer.js' %}"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    {% comment %} <script src="{% static 'assets/js/front-config.js' %}"></script> {% endcomment %}
+  </head>
+
+<body>
+
+  
+  <!-- ?PROD Only: Google Tag Manager (noscript) (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  
+
+
+
+
+
+<script src="{% static 'assets/vendor/js/dropdown-hover.js' %}"></script>
+<script src="{% static 'assets/vendor/js/mega-dropdown.js' %}"></script>
+
+<!-- Navbar: Start -->
+<nav class="layout-navbar shadow-none py-0">
+  <div class="container">
+    <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-4 ">
+      <!-- Menu logo wrapper: Start -->
+      <div class="navbar-brand app-brand demo d-flex py-0 me-4">
+        <!-- Mobile menu toggle: Start-->
+        <button class="navbar-toggler border-0 px-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="tf-icons bx bx-menu bx-sm align-middle"></i>
+        </button>
+        <!-- Mobile menu toggle: End-->
+        <a href="{% url 'home' %}" class="app-brand-link">
+          <span class="app-brand-logo demo">
+
+<svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z" id="path-1"></path>
+    <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z" id="path-3"></path>
+    <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z" id="path-4"></path>
+    <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z" id="path-5"></path>
+  </defs>
+  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+      <g id="Icon" transform="translate(27.000000, 15.000000)">
+        <g id="Mask" transform="translate(0.000000, 8.000000)">
+          <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+          </mask>
+          <use fill="#696cff" xlink:href="#path-1"></use>
+          <g id="Path-3" mask="url(#mask-2)">
+            <use fill="#696cff" xlink:href="#path-3"></use>
+            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+          </g>
+          <g id="Path-4" mask="url(#mask-2)">
+            <use fill="#696cff" xlink:href="#path-4"></use>
+            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+          </g>
+        </g>
+        <g id="Triangle" transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+          <use fill="#696cff" xlink:href="#path-5"></use>
+          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+
+</span>
+          <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">Online Exam</span>
+        </a>
+      </div>
+      <!-- Menu logo wrapper: End -->
+      <!-- Menu wrapper: Start -->
+      <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
+        <button class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 scaleX-n1-rtl" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="tf-icons bx bx-x bx-sm"></i>
+        </button>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-medium" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="{% url 'home' %}#landingFeatures">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="{% url 'home' %}#landingTeam">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="{% url 'home' %}#landingFAQ">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="{% url 'home' %}#landingContact">Contact us</a>
+          </li>
+          <li class="nav-item mega-dropdown">
+          </li>
+        </ul>
+      </div>
+      <div class="landing-menu-overlay d-lg-none"></div>
+      <!-- Menu wrapper: End -->
+      <!-- Toolbar: Start -->
+      <ul class="navbar-nav flex-row align-items-center ms-auto">
+        
+        <!-- Style Switcher -->
+        <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+          <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+            <i class='bx bx-sm'></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+            <li>
+              <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                <span class="align-middle"><i class='bx bx-sun me-2'></i>Light</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                <span class="align-middle"><i class="bx bx-moon me-2"></i>Dark</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
+                <span class="align-middle"><i class="bx bx-desktop me-2"></i>System</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- / Style Switcher-->
+        
+
+        <!-- navbar button: Start -->
+        <li>
+          <a href="{% url 'login' %}" class="btn btn-primary"><span class="tf-icons bx bx-user me-md-1"></span><span class="d-none d-md-block">Login/Register</span></a>
+        </li>
+        <!-- navbar button: End -->
+      </ul>
+      <!-- Toolbar: End -->
+    </div>
+  </div>
+</nav>
+<!-- Navbar: End -->
+
+
+<!-- Sections:Start -->
+
+
+<div data-bs-spy="scroll" class="scrollspy-example">
+  <!-- Hero: Start -->
+  <section id="hero-animation">
+    <div id="landingHero" class="section-py landing-hero position-relative">
+      <div class="container">
+        <div class="hero-text-box text-center">
+          <h1 class="text-primary hero-title display-4 fw-bold">Learn & Upgrade Your Skills on Your Schedule</h1>
+          <h2 class="hero-sub-title h6 mb-4 pb-1">
+            Anywhere, anytime. Everything You Need For Your Exam Preparation
+          </h2>
+          <div class="landing-hero-btn d-inline-block position-relative">
+            <span class="hero-btn-item position-absolute d-none d-md-flex text-heading">Join community
+              <img src="{% static 'assets/img/front-pages/icons/Join-community-arrow.png' %}" alt="Join community arrow" class="scaleX-n1-rtl" /></span>
+            <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+          </div>
+        </div><br>
+        <div id="heroDashboardAnimation" class="hero-animation-img">
+          <a href="../vertical-menu-template/app-ecommerce-dashboard.html" target="_blank">
+            <div id="heroAnimationImg" class="position-relative hero-dashboard-img">
+              <img src="{% static 'assets/img/front-pages/landing-page/hero-dashboard.png' %}" alt="hero dashboard" class="animation-img" data-app-light-img="front-pages/landing-page/hero-dashboard-light.png" data-app-dark-img="front-pages/landing-page/hero-dashboard-dark.png" />
+              
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="landing-hero-blank"></div>
+  </section>
+  <!-- Hero: End -->
+
+  <!-- Useful features: Start -->
+  <section id="landingFeatures" class="section-py landing-features">
+    <div class="container">
+      <div class="text-center mb-3 pb-1">
+        <span class="badge bg-label-primary">Useful Features</span>
+      </div>
+      <h3 class="text-center mb-1">
+        <span class="section-title">Better Learning.</span> Better Results.
+      </h3>
+      <p class="text-center mb-3 mb-md-5 pb-3">
+        One platform for all your learning needs
+      </p>
+      <div class="features-icon-wrapper row gx-0 gy-4 g-sm-5">
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/laptop.png' %}" alt="laptop charging" />
+          </div>
+          <h5 class="mb-3">Top Quality Questions</h5>
+          <p class="features-icon-description">
+            All questions and solutions, designed by top exam experts, based on latest patterns and actual exam level
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/rocket.png' %}" alt="transition up" />
+          </div>
+          <h5 class="mb-3">Detailed Analysis</h5>
+          <p class="features-icon-description">
+            Know your weaknesses, strengths and everything else that you need to know to improve your score and rank.
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/paper.png' %}" alt="edit" />
+          </div>
+          <h5 class="mb-3">Live Quizzes</h5>
+          <p class="features-icon-description">
+            Get your All-India Rank and feel the thrill of a real-exam. Groom your pressure handling and time management skills.
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/check.png' %}" alt="3d select solid" />
+          </div>
+          <h5 class="mb-3">Learning Videos</h5>
+          <p class="features-icon-description">
+            Become lifelong learners with best teachers, engaging video lessons and personalised learning journeys
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/user.png' %}" alt="lifebelt" />
+          </div>
+          <h5 class="mb-3">Excellent Support</h5>
+          <p class="features-icon-description">An easy-to-follow doc with lots of references and code examples.</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center features-icon-box">
+          <div class="text-center mb-3">
+            <img src="{% static 'assets/img/front-pages/icons/keyboard.png' %}" alt="google docs" />
+          </div>
+          <h5 class="mb-3">Well Documented</h5>
+          <p class="features-icon-description">An easy-to-follow doc with lots of references and code examples.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Useful features: End -->
+
+
+  <!-- Real customers reviews: End -->
+
+  <!-- Our great team: Start -->
+  <section id="landingTeam" class="section-py landing-team">
+    <div class="container">
+      <div class="text-center mb-3 pb-1">
+        <span class="badge bg-label-primary">Our Great Team</span>
+      </div>
+      <h3 class="text-center mb-1"><span class="section-title">Supported</span> by Real People</h3>
+      <p class="text-center mb-md-5 pb-3">Who is behind these great-looking interfaces?</p>
+      <div class="row gy-5 mt-2">
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mt-3 mt-lg-0 shadow-none">
+            <div class="bg-label-primary position-relative team-image-box">
+              <img src="{% static 'assets/img/front-pages/landing-page/profile-d.png' %}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid" alt="human image" />
+            </div>
+            <div class="card-body border border-label-primary border-top-0 text-center">
+              <h5 class="card-title mb-0">Masud Rana</h5>
+              <p class="text-muted mb-0">Project Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mt-3 mt-lg-0 shadow-none">
+            <div class="bg-label-info position-relative team-image-box">
+              <img src="{% static 'assets/img/front-pages/landing-page/profile-d.png' %}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid" alt="human image" />
+            </div>
+            <div class="card-body border border-label-info border-top-0 text-center">
+              <h5 class="card-title mb-0">Masud Rana</h5>
+              <p class="text-muted mb-0">UI Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mt-3 mt-lg-0 shadow-none">
+            <div class="bg-label-danger position-relative team-image-box">
+              <img src="{% static 'assets/img/front-pages/landing-page/profile-d.png' %}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid" alt="human image" />
+            </div>
+            <div class="card-body border border-label-danger border-top-0 text-center">
+              <h5 class="card-title mb-0">Masud Rana</h5>
+              <p class="text-muted mb-0">Development Lead</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card mt-3 mt-lg-0 shadow-none">
+            <div class="bg-label-success position-relative team-image-box">
+              <img src="{% static 'assets/img/front-pages/landing-page/profile-d.png' %}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid" alt="human image" />
+            </div>
+            <div class="card-body border border-label-success border-top-0 text-center">
+              <h5 class="card-title mb-0">Masud Rana</h5>
+              <p class="text-muted mb-0">Marketing Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Our great team: End -->
+
+
+
+  <!-- Fun facts: Start -->
+  <section id="landingFunFacts" class="section-py landing-fun-facts">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card border border-label-primary shadow-none">
+            <div class="card-body text-center">
+              <img src="{% static 'assets/img/front-pages/icons/laptop.png' %}" alt="laptop" class="mb-2" />
+              <h5 class="h2 mb-1">7.1k+</h5>
+              <p class="fw-medium mb-0">
+                QUESTION<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card border border-label-success shadow-none">
+            <div class="card-body text-center">
+              <img src="{% static 'assets/img/front-pages/icons/user-success.png' %}" alt="laptop" class="mb-2" />
+              <h5 class="h2 mb-1">1K+</h5>
+              <p class="fw-medium mb-0">
+                USER<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card border border-label-info shadow-none">
+            <div class="card-body text-center">
+              <img src="{% static 'assets/img/front-pages/icons/diamond-info.png' %}" alt="laptop" class="mb-2" />
+              <h5 class="h2 mb-1">35+</h5>
+              <p class="fw-medium mb-0">
+                Topic<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card border border-label-warning shadow-none">
+            <div class="card-body text-center">
+              <img src="{% static 'assets/img/front-pages/icons/check-warning.png' %}" alt="laptop" class="mb-2" />
+              <h5 class="h2 mb-1">4.8/5</h5>
+              <p class="fw-medium mb-0">
+                Rating<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fun facts: End -->
+
+  <!-- FAQ: Start -->
+  <section id="landingFAQ" class="section-py bg-body landing-faq">
+    <div class="container">
+      <div class="text-center mb-3 pb-1">
+        <span class="badge bg-label-primary">FAQ</span>
+      </div>
+      <h3 class="text-center mb-1">Frequently asked <span class="section-title">questions</span></h3>
+      <p class="text-center mb-5 pb-3">Browse through these FAQs to find answers to commonly asked questions.</p>
+      <div class="row gy-5">
+        <div class="col-lg-5">
+          <div class="text-center">
+            <img src="{% static 'assets/img/front-pages/landing-page/faq-boy-with-logos.png' %}" alt="faq boy with logos" class="faq-image" />
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="accordion" id="accordionExample">
+            <div class="card accordion-item active">
+              <h2 class="accordion-header" id="headingOne">
+                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
+                  How do I create an account and register for an exam?
+                </button>
+              </h2>
+
+              <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  To create an account and register for an exam, follow these steps: <br>
+                  * Visit the website and click on the "Login/Register" button.<br>
+                  * Fill in the required information, such as your name, email address, and password.<br>
+                  * Log in to your account.<br>
+                  * Browse the available exams, select the one you want to take, and click "Enroll."<br>
+                </div>
+              </div>
+            </div>
+            <div class="card accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
+                  What do I need to participate in an online exam?
+                </button>
+              </h2>
+              <div id="accordionTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  To participate in an online exam, you will need:<br>
+                  * A computer or mobile device with a stable internet connection.<br>
+                  * A supported web browser (e.g., Chrome, Firefox, Safari).<br>
+                  * Your login credentials (username and password).<br>
+                  * Any specific software or tools required for the exam (if applicable), such as a calculator or a secure exam browser.
+                </div>
+              </div>
+            </div>
+            <div class="card accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionThree" aria-expanded="false" aria-controls="accordionThree">
+                  How are online exams proctored for security?
+                </button>
+              </h2>
+              <div id="accordionThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Our online examination system utilizes various proctoring methods to ensure exam security. This may include: <br>
+                  * Webcam monitoring to verify the test-taker's identity and monitor for suspicious behavior.<br>
+                  * Browser lockdown to prevent users from accessing external websites during the exam.<br>
+                  * Randomizing question order and shuffling answer choices to deter cheating.<br>
+                  * Timed exams to limit the available time for each question.<br>
+                  * AI-based plagiarism detection to identify copied content.<br>
+                </div>
+              </div>
+            </div>
+            <div class="card accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionFour" aria-expanded="false" aria-controls="accordionFour">
+                  Can I review my answers and change them during the exam?
+                </button>
+              </h2>
+              <div id="accordionFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  The ability to review and change answers during an online exam depends on the settings chosen by the exam administrator. Some exams may allow you to review and modify your answers before submitting, while others may not. It's essential to read the instructions provided before starting the exam to understand the rules for that specific test.
+                </div>
+              </div>
+            </div>
+            <div class="card accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionFive" aria-expanded="false" aria-controls="accordionFive">
+                  What happens if I experience technical issues during the exam?
+                </button>
+              </h2>
+              <div id="accordionFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  If you encounter technical issues during the exam, such as internet connectivity problems or software glitches, follow these steps:<br>
+
+                  * Try to refresh your browser or restart the exam if possible.<br>
+                  * Contact our technical support team through the provided contact information.<br>
+                  * If you experience a complete disconnection and cannot continue the exam, reach out to support for guidance on how to proceed. They may offer options for rescheduling or troubleshooting the issue.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ: End -->
+
+
+  <!-- Contact Us: Start -->
+  <section id="landingContact" class="section-py bg-body landing-contact">
+    <div class="container">
+      <div class="text-center mb-3 pb-1">
+        <span class="badge bg-label-primary">Contact US</span>
+      </div>
+      <h3 class="text-center mb-1"><span class="section-title">Let's work</span> together</h3>
+      <p class="text-center mb-4 mb-lg-5 pb-md-3">Any question or remark? just write us a message</p>
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="contact-img-box position-relative border p-2 h-100">
+            <img src="{% static 'assets/img/front-pages/landing-page/contact-customer-service.png' %}" alt="contact customer service" class="contact-img w-100 scaleX-n1-rtl img-fluid" />
+            <div class="pt-3 px-4 pb-1">
+              <div class="row gy-3 gx-md-4">
+                <div class="col-md-6 col-lg-12 col-xl-6">
+                  <div class="d-flex align-items-center">
+                    <div class="badge bg-label-primary rounded p-2 me-2"><i class="bx bx-envelope bx-sm"></i></div>
+                    <div>
+                      <p class="mb-0">Email</p>
+                      <h5 class="mb-0">
+                        <a href="mailto:example@gmail.com" class="text-heading">oes@kyau.edu.bd</a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-12 col-xl-6">
+                  <div class="d-flex align-items-center">
+                    <div class="badge bg-label-success rounded p-2 me-2">
+                      <i class="bx bx-phone-call bx-sm"></i>
+                    </div>
+                    <div>
+                      <p class="mb-0">Phone</p>
+                      <h5 class="mb-0"><a href="tel:+1234-568-963" class="text-heading">+8801700000000</a></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="mb-1">Send a message</h4>
+              <p class="mb-4">
+                If you would like to discuss anything related to payment, account, licensing,<br class="d-none d-lg-block" />
+                partnerships, or have pre-sales questions, you’re at the right place.
+              </p>
+              <form action="{% url 'contact' %}" method = "POST">
+                {% csrf_token %}
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <label class="form-label" for="contact-form-fullname">Full Name</label>
+                    <input type="text" class="form-control" name ="fullname" id="contact-form-fullname" placeholder="Enter Full Name" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="contact-form-email">Email</label>
+                    <input type="text" id="contact-form-email" name ="email" class="form-control" placeholder="example@yourdomain.com" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="contact-form-message">Message</label>
+                    <textarea id="contact-form-message" name ="message" class="form-control" rows="9" placeholder="Write a message"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Send inquiry</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Us: End -->
+</div>
+
+<!-- / Sections:End -->
+
+
+
+<!-- Footer: Start -->
+<footer class="landing-footer bg-body footer-text">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gx-0 gy-4 g-md-5">
+        <div class="col-lg-5">
+          <a href="landing-page.html" class="app-brand-link mb-4">
+            <span class="app-brand-logo demo">
+
+<svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z" id="path-1"></path>
+    <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z" id="path-3"></path>
+    <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z" id="path-4"></path>
+    <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z" id="path-5"></path>
+  </defs>
+  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+      <g id="Icon" transform="translate(27.000000, 15.000000)">
+        <g id="Mask" transform="translate(0.000000, 8.000000)">
+          <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+          </mask>
+          <use fill="#696cff" xlink:href="#path-1"></use>
+          <g id="Path-3" mask="url(#mask-2)">
+            <use fill="#696cff" xlink:href="#path-3"></use>
+            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+          </g>
+          <g id="Path-4" mask="url(#mask-2)">
+            <use fill="#696cff" xlink:href="#path-4"></use>
+            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+          </g>
+        </g>
+        <g id="Triangle" transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+          <use fill="#696cff" xlink:href="#path-5"></use>
+          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+
+</span>
+            <span class="app-brand-text demo footer-link fw-bold ms-2 ps-1">KYAU-OES</span>
+          </a>
+          
+          <form class="footer-form" action = "{% url 'newsletter' %}" method = "POST">
+            {% csrf_token %}
+            <label for="footer-email" class="small">Subscribe to newsletter</label>
+            <div class="d-flex mt-1">
+              <input type="email" class="form-control rounded-0 rounded-start-bottom rounded-start-top" id="footer-email" name="email" placeholder="Your email" />
+              <button type="submit" class="btn btn-primary shadow-none rounded-0 rounded-end-bottom rounded-end-top">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <h6 class="footer-title mb-4">Usefull Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <a href="{% url 'home' %}" class="footer-link">Home</a>
+            </li>
+            <li class="mb-3">
+              <a href="{% url 'home' %}#landingFeatures" class="footer-link">Features</a>
+            </li>
+            <li class="mb-3">
+              <a href="{% url 'home' %}#landingTeam" class="footer-link">Team</a>
+            </li>
+            <li class="mb-3">
+              <a href="{% url 'home' %}#landingFAQ" class="footer-link">FAQ</a>
+            </li>
+            <li class="mb-3">
+              <a href="{% url 'home' %}#landingContact" class="footer-link">Contact us</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-title mb-4">Download our app</h6>
+          <a href="javascript:void(0);" class="d-block footer-link mb-3 pb-2"><img src="{% static 'assets/img/front-pages/landing-page/apple-icon.png' %}" alt="apple icon" /></a>
+          <a href="javascript:void(0);" class="d-block footer-link"><img src="{% static 'assets/img/front-pages/landing-page/google-play-icon.png' %}" alt="google play icon" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom py-3">
+    <div class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
+      <div class="mb-2 mb-md-0">
+        <span class="footer-text">©
+          <script>
+          document.write(new Date().getFullYear());
+
+          </script>
+        </span>
+        
+        <span class="footer-text"> Made with ❤️ by MD MASUD RANA</span>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+<!-- Footer: End -->
+  
+
+  
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{% static 'assets/vendor/libs/nouislider/nouislider.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/swiper/swiper.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'assets/js/front-page-landing.js' %}"></script>
+
+</body>
+
+</html>
+
+<!-- beautify ignore:end -->
+
